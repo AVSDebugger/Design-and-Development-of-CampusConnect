@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Selection | CampusConnect</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="dashboard-body">
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">CC</div>
+            <div>
+                <h2>CampusConnect</h2>
+                <span>Admin Portal</span>
+            </div>
+        </div>
+
+        <div class="sidebar-menu">
+            <p class="menu-heading">MAIN MENU</p>
+
+            <a href="dashboard.html" class="menu-item"><span>▦</span> Dashboard</a>
+            <a href="course-selection.html" class="menu-item active"><span>▤</span> Course Selection</a>
+            <a href="batch-selection.html" class="menu-item"><span>▣</span> Batch Selection</a>
+            <a href="alumni-list.html" class="menu-item"><span>♙</span> Alumni List</a>
+            <a href="verification.html" class="menu-item"><span>✓</span> Verification</a>
+
+            <p class="menu-heading">ACCOUNT</p>
+            <button class="menu-item logout-menu" id="logoutBtn"><span>↪</span> Logout</button>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="admin-avatar">AD</div>
+            <div>
+                <strong>Administrator</strong>
+                <span>System Admin</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <div>
+                    <h2>Course Selection</h2>
+                    <p>Select a course to explore its alumni records.</p>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <div class="date-display" id="currentDate"></div>
+                <div class="topbar-profile">
+                    <div class="admin-avatar">AD</div>
+                    <div>
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard-container">
+
+            <div class="breadcrumb">
+                <a href="dashboard.html">Dashboard</a> / Course Selection
+            </div>
+
+            <div class="page-heading">
+                <div>
+                    <h1>Explore Courses</h1>
+                    <p>Select an academic course to view its alumni batches.</p>
+                </div>
+            </div>
+
+            <div class="course-grid">
+
+                <div class="course-card">
+                    <div class="course-icon blue">💻</div>
+                    <span class="course-tag">Undergraduate</span>
+                    <h3>BBA</h3>
+                    <p>Bachelor of Business Administration</p>
+                    <button class="primary-btn select-course" data-course="B.Sc Computer Science">
+                        Select Course →
+                    </button>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon purple">🖥️</div>
+                    <span class="course-tag">Undergraduate</span>
+                    <h3>BCA</h3>
+                    <p>Bachelor of Computer Applications</p>
+                    <button class="primary-btn select-course" data-course="BCA">
+                        Select Course →
+                    </button>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon green">📊</div>
+                    <span class="course-tag">Undergraduate</span>
+                    <h3>B.Sc Information Technology</h3>
+                    <p>Information Technology Department</p>
+                    <button class="primary-btn select-course" data-course="B.Sc Information Technology">
+                        Select Course →
+                    </button>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon orange">🎓</div>
+                    <span class="course-tag">Postgraduate</span>
+                    <h3>MCA</h3>
+                    <p>Master of Computer Applications</p>
+                    <button class="primary-btn select-course" data-course="MCA">
+                        Select Course →
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="../assets/js/admin-pages.js"></script>
+</body>
+</html>

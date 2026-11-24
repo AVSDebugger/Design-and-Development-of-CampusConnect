@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification | CampusConnect</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="dashboard-body">
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">CC</div>
+            <div><h2>CampusConnect</h2><span>Admin Portal</span></div>
+        </div>
+
+        <div class="sidebar-menu">
+            <p class="menu-heading">MAIN MENU</p>
+            <a href="dashboard.html" class="menu-item"><span>▦</span> Dashboard</a>
+            <a href="course-selection.html" class="menu-item"><span>▤</span> Course Selection</a>
+            <a href="batch-selection.html" class="menu-item"><span>▣</span> Batch Selection</a>
+            <a href="alumni-list.html" class="menu-item"><span>♙</span> Alumni List</a>
+            <a href="verification.html" class="menu-item active"><span>✓</span> Verification</a>
+            <p class="menu-heading">ACCOUNT</p>
+            <button class="menu-item logout-menu" id="logoutBtn"><span>↪</span> Logout</button>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="admin-avatar">AD</div>
+            <div><strong>Administrator</strong><span>System Admin</span></div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <div>
+                    <h2>Registration Verification</h2>
+                    <p>Review and manage alumni registration requests.</p>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <div class="date-display" id="currentDate"></div>
+                <div class="topbar-profile">
+                    <div class="admin-avatar">AD</div>
+                    <div><strong>Admin</strong><span>Administrator</span></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard-container">
+
+            <div class="breadcrumb">
+                <a href="dashboard.html">Dashboard</a> / Verification
+            </div>
+
+            <div class="page-heading">
+                <div>
+                    <h1>Alumni Verification</h1>
+                    <p>Review submitted information before approving registrations.</p>
+                </div>
+            </div>
+
+            <div class="verification-summary">
+                <div class="verification-box">
+                    <span>Pending Requests</span>
+                    <h2 id="pendingCount">3</h2>
+                </div>
+                <div class="verification-box">
+                    <span>Verified</span>
+                    <h2 id="verifiedCount">1</h2>
+                </div>
+                <div class="verification-box">
+                    <span>Rejected</span>
+                    <h2 id="rejectedCount">1</h2>
+                </div>
+            </div>
+
+            <div class="content-card">
+
+                <div class="card-heading">
+                    <div>
+                        <h3>Registration Requests</h3>
+                        <p>Approve or reject the following demo applications.</p>
+                    </div>
+                    <select id="verificationFilter" class="filter-select">
+                        <option value="">All Status</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Verified">Verified</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table id="verificationTable">
+                        <thead>
+                            <tr>
+                                <th>ALUMNI NAME</th>
+                                <th>EMAIL</th>
+                                <th>COURSE</th>
+                                <th>BATCH</th>
+                                <th>STATUS</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr data-status="Pending">
+                                <td>Rahul Sharma</td>
+                                <td>rahul@gmail.com</td>
+                                <td>BCA</td>
+                                <td>2022</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <button class="small-action approve-btn">Approve</button>
+                                    <button class="small-action reject-btn">Reject</button>
+                                </td>
+                            </tr>
+
+                            <tr data-status="Pending">
+                                <td>Sneha Kulkarni</td>
+                                <td>sneha@gmail.com</td>
+                                <td>BCA</td>
+                                <td>2021</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <button class="small-action approve-btn">Approve</button>
+                                    <button class="small-action reject-btn">Reject</button>
+                                </td>
+                            </tr>
+
+                            <tr data-status="Verified">
+                                <td>Ananya Patil</td>
+                                <td>ananya@gmail.com</td>
+                                <td>B.Sc CS</td>
+                                <td>2023</td>
+                                <td><span class="status verified">Verified</span></td>
+                                <td><span class="action-complete">Completed</span></td>
+                            </tr>
+
+                            <tr data-status="Rejected">
+                                <td>Priya Gupta</td>
+                                <td>priya@gmail.com</td>
+                                <td>BCA</td>
+                                <td>2024</td>
+                                <td><span class="status rejected">Rejected</span></td>
+                                <td><span class="action-complete">Completed</span></td>
+                            </tr>
+
+                            <tr data-status="Pending">
+                                <td>Rohit Deshmukh</td>
+                                <td>rohit@gmail.com</td>
+                                <td>MCA</td>
+                                <td>2024</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <button class="small-action approve-btn">Approve</button>
+                                    <button class="small-action reject-btn">Reject</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="../assets/js/admin-pages.js"></script>
+</body>
+</html>
