@@ -89,6 +89,7 @@ a {
 .login-brand h1 {
     font-size: 25px;
     margin-top: 18px;
+    color:var(--primary) ;
 }
 
 .login-brand > p {
@@ -120,6 +121,7 @@ a {
 .brand-illustration h2 {
     font-size: 25px;
     margin-bottom: 12px;
+    color: var(--primary);
 }
 
 .brand-illustration p {
