@@ -187,3 +187,41 @@ if (viewAllBtn) {
     }
 
 })();
+
+// DASHBOARD ALUMNI APPROVAL ACTIONS
+
+document.addEventListener("click", function (event) {
+
+    const button = event.target.closest(
+        ".approve-btn, .reject-btn"
+    );
+
+    if (!button) return;
+
+    const row = button.closest("tr");
+
+    if (!row) return;
+
+    const newStatus = button.classList.contains("approve-btn")
+        ? "Verified"
+        : "Rejected";
+
+    const confirmed = confirm(
+        `Are you sure you want to ${newStatus.toLowerCase()} this alumni request?`
+    );
+
+    if (!confirmed) return;
+
+    // Update status
+    const statusCell = row.cells[3];
+
+    statusCell.innerHTML =
+        `<span class="status ${newStatus.toLowerCase()}">${newStatus}</span>`;
+
+    // Update action buttons
+    row.cells[4].innerHTML =
+        '<span class="action-complete">Completed</span>';
+
+    alert(`Alumni registration ${newStatus.toLowerCase()}!`);
+
+});
