@@ -1,0 +1,305 @@
+
+/* =========================================================
+   CAMPUSCONNECT - ALUMNI REGISTRATION PAGE
+   Premium Red & White Theme
+   ========================================================= */
+
+/* Page Background */
+.auth {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 18px;
+    background:
+        radial-gradient(circle at top left, rgba(180, 35, 50, .09), transparent 35%),
+        linear-gradient(135deg, #FFF7F7, #FFFFFF);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Registration Container */
+.authbox {
+    width: 100%;
+    max-width: 850px;
+    padding: 38px 42px;
+    border: 1px solid #F0DCDD;
+    border-radius: 18px;
+    background: #FFFFFF;
+    box-shadow: 0 12px 40px rgba(130, 25, 40, .10);
+}
+
+/* Brand Heading */
+.authbox h1,
+.authbox h2 {
+    margin: 0 0 10px;
+    color: #861C2A;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.authbox h1 {
+    font-size: 27px;
+}
+
+.authbox h2 {
+    font-size: 21px;
+}
+
+.authbox p {
+    color: #626262;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Form Grid */
+.formgrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 20px;
+    margin-top: 25px;
+}
+
+/* Form Groups */
+.formgrid > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.formgrid label {
+    color: #252525;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Form Inputs */
+.formgrid input,
+.formgrid select,
+.formgrid textarea {
+    width: 100%;
+    min-height: 45px;
+    padding: 11px 13px;
+    border: 1px solid #F0DCDD;
+    border-radius: 8px;
+    outline: none;
+    background: #FFFBFB;
+    color: #252525;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    transition: .2s ease;
+}
+
+.formgrid textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.formgrid input::placeholder,
+.formgrid textarea::placeholder {
+    color: #A99A9A;
+}
+
+.formgrid input:focus,
+.formgrid select:focus,
+.formgrid textarea:focus {
+    border-color: #B42332;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(180, 35, 50, .09);
+}
+
+/* Full Width Fields */
+.formgrid .full,
+.formgrid .wide {
+    grid-column: 1 / -1;
+}
+
+/* Registration Button */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(120deg, #B42332, #861C2A);
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.btn:hover {
+    background: #861C2A;
+    box-shadow: 0 7px 18px rgba(180, 35, 50, .20);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Button inside Registration Form */
+.formgrid .btn {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* Status and Response Message */
+.message {
+    margin-top: 16px;
+    padding: 12px 15px;
+    border: 1px solid #F0DCDD;
+    border-radius: 8px;
+    background: #FFFAFA;
+    color: #626262;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.message.success {
+    border-color: #B9E7CE;
+    background: #E8F7EF;
+    color: #168653;
+}
+
+.message.error {
+    border-color: #F2C3C7;
+    background: #FDEBEC;
+    color: #C62828;
+}
+
+/* Links */
+.authbox a {
+    color: #B42332;
+    font-weight: 700;
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+.authbox a:hover {
+    color: #861C2A;
+    text-decoration: underline;
+}
+
+/* Horizontal Divider */
+.authbox hr {
+    margin: 22px 0;
+    border: 0;
+    border-top: 1px solid #F0DCDD;
+}
+
+/* Responsive Design */
+@media (max-width: 650px) {
+    .auth {
+        padding: 18px 12px;
+    }
+
+    .authbox {
+        padding: 28px 22px;
+        border-radius: 14px;
+    }
+
+    .formgrid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .formgrid .full,
+    .formgrid .wide {
+        grid-column: auto;
+    }
+
+    .authbox h1 {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 400px) {
+    .authbox {
+        padding: 23px 16px;
+    }
+
+    .authbox h1 {
+        font-size: 20px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   REGISTRATION PAGE - OVERFLOW AND ALIGNMENT FIX
+   ===================================================== */
+
+.auth,
+.auth * {
+    box-sizing: border-box;
+}
+
+.authbox {
+    width: 100%;
+    max-width: 850px;
+    overflow: hidden;
+}
+
+.formgrid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.formgrid > div {
+    width: 100%;
+    min-width: 0;
+}
+
+.formgrid input,
+.formgrid select,
+.formgrid textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.formgrid .full,
+.formgrid .wide {
+    grid-column: 1 / -1;
+}
+
+.formgrid .btn {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Remove browser autofill blue background */
+.formgrid input:-webkit-autofill,
+.formgrid input:-webkit-autofill:hover,
+.formgrid input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #FFFBFB inset !important;
+    -webkit-text-fill-color: #252525 !important;
+    caret-color: #252525;
+}
+
+@media (max-width: 650px) {
+    .authbox {
+        padding: 25px 18px;
+    }
+
+    .formgrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .formgrid .full,
+    .formgrid .wide {
+        grid-column: 1;
+    }
+}

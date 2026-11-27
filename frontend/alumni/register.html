@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alumni Registration | CampusConnect</title>
+    <link rel="stylesheet" href="../assets/css/alumni-register.css">
+</head>
+
+<body class="auth">
+
+    <main class="authbox wide">
+
+        <a class="brand" href="login.html">
+            <b>CC</b>
+            CampusConnect
+        </a>
+
+        <small>JOIN YOUR COMMUNITY</small>
+
+        <h1>Alumni Registration</h1>
+
+        <p>
+            Register yourself and reconnect with your college community.
+        </p>
+
+        <form id="alumniRegisterForm" class="formgrid">
+
+            <label>
+                Full Name
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </label>
+
+            <label>
+                Email Address
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </label>
+
+            <label>
+                Phone Number
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Enter your mobile number"
+                    required
+                >
+            </label>
+
+            <label>
+                Course
+                <select name="course" required>
+                    <option value="">Select Course</option>
+                    <option>BCA</option>
+                    <option>BSc Computer Science</option>
+                    <option>BA</option>
+                    <option>BCom</option>
+                    <option>BBA</option>
+                    <option>MCA</option>
+                    <option>MSc</option>
+                    <option>Other</option>
+                </select>
+            </label>
+
+            <label>
+                Passing Year
+                <input
+                    type="number"
+                    name="passingYear"
+                    min="1980"
+                    max="2035"
+                    placeholder="e.g. 2024"
+                    required
+                >
+            </label>
+
+            <label>
+                PRN / Enrollment Number
+                <input
+                    type="text"
+                    name="prn"
+                    placeholder="Enter PRN number"
+                    required
+                >
+            </label>
+
+            <label>
+                Password
+                <input
+                    type="password"
+                    name="password"
+                    minlength="6"
+                    placeholder="Create password"
+                    required
+                >
+            </label>
+
+            <label>
+                Confirm Password
+                <input
+                    type="password"
+                    name="confirmPassword"
+                    minlength="6"
+                    placeholder="Confirm password"
+                    required
+                >
+            </label>
+
+            <button type="submit" class="btn full">
+                Submit Registration
+            </button>
+
+        </form>
+
+        <!-- <p id="registerMessage" class="message"></p> -->
+
+        <p>
+            Already have an account?
+            <a href="login.html">Login Here</a>
+        </p>
+
+    </main>
+
+    <script src="../assets/js/alumni-register.js"></script>
+
+</body>
+</html>

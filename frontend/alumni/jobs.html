@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs & Opportunities | CampusConnect</title>
+
+    <link rel="stylesheet" href="../assets/css/alumni.css">
+    <link rel="stylesheet" href="../assets/css/alumni-dashboard.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">CC</div>
+            <h2>CampusConnect</h2>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="my-profile.html">My Profile</a>
+            <a href="alumni-directory.html">Alumni Directory</a>
+            <a href="events.html">Events & Reunions</a>
+            <a href="jobs.html" class="active">Jobs & Opportunities</a>
+            <a href="mentorship.html">Mentorship</a>
+            <a href="notifications.html">Notifications</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-help">
+                <h4>Need Help?</h4>
+                <p>Contact the CampusConnect support team.</p>
+            </div>
+
+            <a href="login.html" class="logout-link">Logout</a>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <button id="menuToggle" class="menu-toggle">☰</button>
+                <h2 class="topbar-title">Jobs & Opportunities</h2>
+                <p id="todayDate"></p>
+            </div>
+
+            <div class="topbar-right">
+                <div class="header-user">
+                    <div class="profile-avatar" id="headerAvatar">A</div>
+                    <span id="headerUserName">Alumni</span>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- PAGE CONTENT -->
+        <section class="dashboard-content">
+
+            <!-- PAGE HEADING -->
+            <div class="page-heading">
+                <div>
+                    <h1>Career Opportunities</h1>
+                    <p>
+                        Discover job opportunities and internships
+                        shared by our alumni community.
+                    </p>
+                </div>
+            </div>
+
+            <!-- WELCOME BANNER -->
+            <section class="welcome-banner">
+                <div>
+                    <h2>Take the Next Step in Your Career!</h2>
+                    <p>
+                        Explore opportunities, connect with recruiters
+                        and grow professionally through the
+                        CampusConnect alumni network.
+                    </p>
+                </div>
+            </section>
+
+            <!-- JOB STATISTICS -->
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <div class="stat-icon">💼</div>
+                    <div>
+                        <h3 id="totalJobs">8</h3>
+                        <p>Available Jobs</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🏢</div>
+                    <div>
+                        <h3>12+</h3>
+                        <p>Hiring Companies</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🎓</div>
+                    <div>
+                        <h3>5+</h3>
+                        <p>Internship Opportunities</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SEARCH AND FILTER -->
+            <section class="dashboard-card">
+
+                <div class="card-heading">
+                    <div>
+                        <h3>Find Your Opportunity</h3>
+                        <p>Search jobs by title, company or skills.</p>
+                    </div>
+                </div>
+
+                <div class="job-search-toolbar">
+
+                    <input
+                        type="text"
+                        id="jobSearch"
+                        placeholder="Search job title, company or skills..."
+                    >
+
+                    <select id="jobType">
+                        <option value="">All Job Types</option>
+                        <option value="full-time">Full Time</option>
+                        <option value="part-time">Part Time</option>
+                        <option value="internship">Internship</option>
+                        <option value="remote">Remote</option>
+                    </select>
+
+                </div>
+
+            </section>
+
+            <!-- JOB LISTINGS -->
+            <section class="dashboard-card">
+
+                <div class="card-heading">
+                    <div>
+                        <h3>Latest Job Openings</h3>
+                        <p>Explore opportunities from different industries.</p>
+                    </div>
+                </div>
+
+                <div id="jobListings">
+
+                    <!-- JOB 1 -->
+                    <div class="job-listing"
+                         data-search="frontend developer brightlabs react javascript html css pune"
+                         data-type="full-time">
+
+                        <h3>Frontend Developer</h3>
+
+                        <p><strong>Company:</strong> BrightLabs</p>
+                        <p><strong>Location:</strong> Pune, Maharashtra</p>
+                        <p><strong>Experience:</strong> 0–2 Years</p>
+                        <p><strong>Salary:</strong> ₹3–5 LPA</p>
+
+                        <div class="job-tags">
+                            <span>Full Time</span>
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>HTML & CSS</span>
+                        </div>
+
+                        <button class="primary-btn apply-job-btn"
+                                data-job="Frontend Developer">
+                            Apply Now
+                        </button>
+
+                    </div>
+
+                    <!-- JOB 2 -->
+                    <div class="job-listing"
+                         data-search="python developer intern techsphere flask python sql remote"
+                         data-type="internship">
+
+                        <h3>Python Development Intern</h3>
+
+                        <p><strong>Company:</strong> TechSphere</p>
+                        <p><strong>Location:</strong> Remote</p>
+                        <p><strong>Experience:</strong> Fresher</p>
+                        <p><strong>Duration:</strong> 3 Months</p>
+
+                        <div class="job-tags">
+                            <span>Internship</span>
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>SQL</span>
+                        </div>
+
+                        <button class="primary-btn apply-job-btn"
+                                data-job="Python Development Intern">
+                            Apply Now
+                        </button>
+
+                    </div>
+
+                    <!-- JOB 3 -->
+                    <div class="job-listing"
+                         data-search="junior business analyst insightworks excel sql mumbai"
+                         data-type="full-time">
+
+                        <h3>Junior Business Analyst</h3>
+
+                        <p><strong>Company:</strong> InsightWorks</p>
+                        <p><strong>Location:</strong> Mumbai, Maharashtra</p>
+                        <p><strong>Experience:</strong> 0–1 Year</p>
+                        <p><strong>Salary:</strong> ₹3–4 LPA</p>
+
+                        <div class="job-tags">
+                            <span>Full Time</span>
+                            <span>Excel</span>
+                            <span>SQL</span>
+                            <span>Analytics</span>
+                        </div>
+
+                        <button class="primary-btn apply-job-btn"
+                                data-job="Junior Business Analyst">
+                            Apply Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div id="jobEmpty" class="empty-state"
+                     style="display:none;">
+                    <h3>No Jobs Found</h3>
+                    <p>Try changing your search or filter.</p>
+                </div>
+
+                <p id="jobMessage" class="form-message"></p>
+
+            </section>
+
+            <!-- POST JOB SECTION -->
+            <section class="dashboard-card">
+
+                <div class="card-heading">
+                    <h3>Help Fellow Alumni Find Jobs</h3>
+                </div>
+
+                <p>
+                    Are you working in an organization that is hiring?
+                    Share opportunities with fellow alumni and help
+                    them grow their careers.
+                </p>
+
+                <button class="secondary-btn" id="postJobBtn">
+                    + Share a Job Opportunity
+                </button>
+
+            </section>
+
+            <!-- CAREER GUIDANCE -->
+            <section class="dashboard-card">
+
+                <div class="card-heading">
+                    <h3>Career Development Tips</h3>
+                </div>
+
+                <div class="quick-access-grid">
+
+                    <a href="my-profile.html">
+                        <span>👤</span>
+                        <span>Update Your Profile</span>
+                    </a>
+
+                    <a href="alumni-directory.html">
+                        <span>🤝</span>
+                        <span>Connect with Alumni</span>
+                    </a>
+
+                    <a href="mentorship.html">
+                        <span>🎯</span>
+                        <span>Find a Career Mentor</span>
+                    </a>
+
+                    <a href="events.html">
+                        <span>📅</span>
+                        <span>Attend Career Events</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                © 2026 CampusConnect | Alumni Networking Platform
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../assets/js/alumni-common.js"></script>
+<script src="../assets/js/alumni-jobs.js"></script>
+
+</body>
+</html>

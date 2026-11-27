@@ -55,13 +55,94 @@
 
             <div class="topbar-right">
                 <div class="date-display" id="currentDate"></div>
-                <div class="topbar-profile">
+                <!-- <div class="topbar-profile">
                     <div class="admin-avatar">AD</div>
                     <div>
                         <strong>Admin</strong>
                         <span>Administrator</span>
                     </div>
-                </div>
+                </div> -->
+                <!-- ADMIN PROFILE SECTION -->
+
+<div class="admin-profile-container">
+
+    <button class="admin-profile-button"
+            id="adminProfileButton"
+            type="button"
+            aria-expanded="false"
+            aria-controls="adminProfileDropdown">
+
+        <div class="admin-avatar">
+            AD
+        </div>
+
+        <div class="admin-profile-heading">
+            <h4>Admin</h4>
+            <span>Administrator</span>
+        </div>
+
+        <span class="profile-arrow">▼</span>
+
+    </button>
+
+    <!-- PROFILE DROPDOWN -->
+
+    <div class="admin-profile-dropdown"
+         id="adminProfileDropdown"
+         hidden>
+
+        <div class="profile-card-header">
+
+            <div class="admin-avatar large-avatar">AD</div>
+
+            <div>
+                <h3>Anjali Deore</h3>
+                <p>System Administrator</p>
+                <span class="admin-role-badge">Admin Account</span>
+            </div>
+
+        </div>
+
+        <div class="profile-card-details">
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Full Name</span>
+                <strong>Anjali Deore</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Email Address</span>
+                <strong>admin@campusconnect.com</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Role</span>
+                <strong>Administrator</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Department</span>
+                <strong>Administration</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Account Status</span>
+                <strong class="account-active">Active</strong>
+            </div>
+
+        </div>
+
+        <div class="profile-card-footer">
+            <button type="button"
+                    class="profile-logout-btn"
+                    id="profileLogoutBtn">
+                Logout
+            </button>
+        </div>
+
+    </div>
+
+</div>
             </div>
         </header>
 

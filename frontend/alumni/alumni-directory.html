@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alumni Directory | CampusConnect</title>
+
+    <link rel="stylesheet" href="../assets/css/alumni.css">
+    <link rel="stylesheet" href="../assets/css/alumni-dashboard.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <span class="brand-logo">CC</span>
+            <span>CampusConnect</span>
+        </div>
+
+        <p class="menu-heading">ALUMNI MENU</p>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="my-profile.html">
+                <span>♙</span> My Profile
+            </a>
+
+            <a href="alumni-directory.html" class="active">
+                <span>◎</span> Alumni Directory
+            </a>
+
+            <a href="events.html">
+                <span>▣</span> Events & Reunions
+            </a>
+
+            <a href="jobs.html">
+                <span>▤</span> Jobs & Opportunities
+            </a>
+
+            <a href="mentorship.html">
+                <span>♧</span> Mentorship
+            </a>
+
+            <a href="notifications.html">
+                <span>♢</span> Notifications
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-help">
+                <h4>Stay Connected!</h4>
+                <p>Build meaningful connections with your alumni community.</p>
+            </div>
+
+            <a href="login.html" class="logout-link">
+                ↪ Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                <small>ALUMNI COMMUNITY</small>
+                <h3>Alumni Directory</h3>
+            </div>
+
+            <div class="topbar-right">
+
+                <span id="todayDate"></span>
+
+                <a href="notifications.html" class="notification-icon">
+                    ♢
+                </a>
+
+                <div class="user-info">
+                    <div class="user-avatar" id="headerAvatar">A</div>
+                    <span id="headerUserName">Alumni</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- DIRECTORY CONTENT -->
+        <div class="dashboard-content">
+
+            <div class="page-heading">
+                <h1>Alumni Directory</h1>
+                <p>
+                    Discover, explore and connect with your
+                    institute's alumni community.
+                </p>
+            </div>
+
+
+            <!-- SEARCH AND FILTER SECTION -->
+            <section class="dashboard-card">
+
+                <div class="card-heading">
+                    <div>
+                        <small>EXPLORE YOUR NETWORK</small>
+                        <h2>Find Alumni</h2>
+                    </div>
+                </div>
+
+                <div class="directory-filters">
+
+                    <input
+                        type="search"
+                        id="directorySearch"
+                        placeholder="Search by name, company or designation..."
+                    >
+
+                    <select id="courseFilter">
+                        <option value="">All Courses</option>
+                        <option value="BCA">BCA</option>
+                        <option value="BSc Computer Science">
+                            BSc Computer Science
+                        </option>
+                        <option value="MCA">MCA</option>
+                        <option value="BCom">BCom</option>
+                        <option value="BA">BA</option>
+                        <option value="BBA">BBA</option>
+                    </select>
+
+                    <select id="yearFilter">
+                        <option value="">All Batches</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                    </select>
+
+                </div>
+
+            </section>
+
+
+            <!-- ALUMNI LIST -->
+            <section class="dashboard-card">
+
+                <div class="card-heading">
+                    <div>
+                        <small>OUR NETWORK</small>
+                        <h2>Registered Alumni</h2>
+                    </div>
+
+                    <span class="directory-count">
+                        Alumni Members
+                    </span>
+                </div>
+
+
+                <div class="alumni-directory-grid" id="directoryGrid">
+
+                    <!-- ALUMNI CARD 1 -->
+                    <article
+                        class="alumni-card"
+                        data-name="Rahul Sharma"
+                        data-course="BCA"
+                        data-year="2022"
+                        data-info="Software Engineer Pune Java React"
+                    >
+
+                        <div class="alumni-avatar">RS</div>
+
+                        <h3>Rahul Sharma</h3>
+
+                        <p>BCA · 2022</p>
+
+                        <span class="alumni-designation">
+                            Software Engineer
+                        </span>
+
+                        <small>Pune, Maharashtra</small>
+
+                        <div class="alumni-skills">
+                            Java · React
+                        </div>
+
+                        <button
+                            class="view-alumni-btn"
+                            type="button"
+                            data-name="Rahul Sharma"
+                        >
+                            View Profile
+                        </button>
+
+                    </article>
+
+
+                    <!-- ALUMNI CARD 2 -->
+                    <article
+                        class="alumni-card"
+                        data-name="Priya Patil"
+                        data-course="BSc Computer Science"
+                        data-year="2024"
+                        data-info="Data Analyst Nashik Python SQL"
+                    >
+
+                        <div class="alumni-avatar">PP</div>
+
+                        <h3>Priya Patil</h3>
+
+                        <p>BSc Computer Science · 2024</p>
+
+                        <span class="alumni-designation">
+                            Data Analyst
+                        </span>
+
+                        <small>Nashik, Maharashtra</small>
+
+                        <div class="alumni-skills">
+                            Python · SQL
+                        </div>
+
+                        <button
+                            class="view-alumni-btn"
+                            type="button"
+                            data-name="Priya Patil"
+                        >
+                            View Profile
+                        </button>
+
+                    </article>
+
+
+                    <!-- ALUMNI CARD 3 -->
+                    <article
+                        class="alumni-card"
+                        data-name="Amit Deshmukh"
+                        data-course="MCA"
+                        data-year="2023"
+                        data-info="Web Developer Mumbai HTML CSS JavaScript"
+                    >
+
+                        <div class="alumni-avatar">AD</div>
+
+                        <h3>Amit Deshmukh</h3>
+
+                        <p>MCA · 2023</p>
+
+                        <span class="alumni-designation">
+                            Web Developer
+                        </span>
+
+                        <small>Mumbai, Maharashtra</small>
+
+                        <div class="alumni-skills">
+                            HTML · CSS · JavaScript
+                        </div>
+
+                        <button
+                            class="view-alumni-btn"
+                            type="button"
+                            data-name="Amit Deshmukh"
+                        >
+                            View Profile
+                        </button>
+
+                    </article>
+
+
+                    <!-- ALUMNI CARD 4 -->
+                    <article
+                        class="alumni-card"
+                        data-name="Sneha Kulkarni"
+                        data-course="BCom"
+                        data-year="2022"
+                        data-info="Accountant Pune Finance Excel"
+                    >
+
+                        <div class="alumni-avatar">SK</div>
+
+                        <h3>Sneha Kulkarni</h3>
+
+                        <p>BCom · 2022</p>
+
+                        <span class="alumni-designation">
+                            Accountant
+                        </span>
+
+                        <small>Pune, Maharashtra</small>
+
+                        <div class="alumni-skills">
+                            Finance · Excel
+                        </div>
+
+                        <button
+                            class="view-alumni-btn"
+                            type="button"
+                            data-name="Sneha Kulkarni"
+                        >
+                            View Profile
+                        </button>
+
+                    </article>
+
+                </div>
+
+
+                <p id="directoryEmpty" class="empty-message" hidden>
+                    No alumni found matching your search.
+                </p>
+
+            </section>
+
+
+            <footer class="dashboard-footer">
+                © 2026 CampusConnect. All Rights Reserved.
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="../assets/js/alumni-common.js"></script>
+<script src="../assets/js/alumni-directory.js"></script>
+
+</body>
+</html>

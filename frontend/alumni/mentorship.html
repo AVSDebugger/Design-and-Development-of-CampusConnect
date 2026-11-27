@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship | CampusConnect</title>
+
+    <link rel="stylesheet" href="../assets/css/alumni.css">
+    <link rel="stylesheet" href="../assets/css/alumni-dashboard.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-logo">CC</div>
+            <h2>CampusConnect</h2>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="my-profile.html">My Profile</a>
+            <a href="alumni-directory.html">Alumni Directory</a>
+            <a href="events.html">Events & Reunions</a>
+            <a href="jobs.html">Jobs & Opportunities</a>
+            <a href="mentorship.html" class="active">Mentorship</a>
+            <a href="notifications.html">Notifications</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-help">
+                <h4>Need Help?</h4>
+                <p>Contact the CampusConnect support team.</p>
+            </div>
+            <a href="login.html" class="logout-link">Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar">
+            <div>
+                <button id="menuToggle" class="menu-toggle">☰</button>
+                <h2 class="topbar-title">Mentorship</h2>
+                <p id="todayDate"></p>
+            </div>
+
+            <div class="topbar-right">
+                <div class="header-user">
+                    <div class="profile-avatar" id="headerAvatar">A</div>
+                    <span id="headerUserName">Alumni</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard-content">
+
+            <!-- Page Heading -->
+            <div class="page-heading">
+                <div>
+                    <h1>Alumni Mentorship Program</h1>
+                    <p>Connect, learn and grow with experienced alumni.</p>
+                </div>
+            </div>
+
+            <!-- Welcome Banner -->
+            <section class="welcome-banner">
+                <div>
+                    <h2>Knowledge Shared, Careers Strengthened!</h2>
+                    <p>
+                        Learn from experienced professionals, get career guidance
+                        and build meaningful professional connections.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Mentorship Statistics -->
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <div class="stat-icon">👨‍🏫</div>
+                    <div>
+                        <h3>120+</h3>
+                        <p>Available Mentors</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🤝</div>
+                    <div>
+                        <h3>85+</h3>
+                        <p>Active Connections</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🌟</div>
+                    <div>
+                        <h3>50+</h3>
+                        <p>Career Fields</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mentorship Options -->
+            <div class="dashboard-grid">
+
+                <!-- Find Mentor -->
+                <section class="dashboard-card">
+                    <div class="card-heading">
+                        <h3>Find a Mentor</h3>
+                    </div>
+
+                    <p>
+                        Get guidance from experienced alumni working in
+                        different industries.
+                    </p>
+
+                    <div class="form-group">
+                        <label for="mentorSearch">Search by Name or Skill</label>
+                        <input
+                            type="text"
+                            id="mentorSearch"
+                            placeholder="Example: Software Developer"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mentorField">Select Industry</label>
+                        <select id="mentorField">
+                            <option value="">All Industries</option>
+                            <option value="IT">Information Technology</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Business">Business</option>
+                            <option value="Education">Education</option>
+                        </select>
+                    </div>
+
+                    <button class="primary-btn" id="searchMentorBtn">
+                        Search Mentors
+                    </button>
+                </section>
+
+                <!-- Become Mentor -->
+                <section class="dashboard-card">
+                    <div class="card-heading">
+                        <h3>Become a Mentor</h3>
+                    </div>
+
+                    <p>
+                        Share your professional experience and help
+                        current students and fellow alumni.
+                    </p>
+
+                    <ul>
+                        <li>Guide students in career planning.</li>
+                        <li>Share industry knowledge.</li>
+                        <li>Help others develop professional skills.</li>
+                        <li>Build your alumni network.</li>
+                    </ul>
+
+                    <button class="primary-btn" id="becomeMentorBtn">
+                        Register as Mentor
+                    </button>
+                </section>
+
+            </div>
+
+            <!-- Mentor Directory -->
+            <section class="dashboard-card">
+                <div class="card-heading">
+                    <div>
+                        <h3>Explore Available Mentors</h3>
+                        <p>Connect with professionals from our alumni community.</p>
+                    </div>
+                </div>
+
+                <div class="mentor-grid" id="mentorGrid">
+
+                    <!-- Mentor 1 -->
+                    <div class="mentor-card"
+                         data-name="Rahul Sharma"
+                         data-field="IT"
+                         data-skills="Java Python Software Development">
+
+                        <div class="mentor-avatar">RS</div>
+                        <h3>Rahul Sharma</h3>
+                        <p class="mentor-role">Senior Software Engineer</p>
+                        <p>BrightTech Solutions, Pune</p>
+                        <p><strong>Experience:</strong> 7 Years</p>
+                        <p><strong>Skills:</strong> Java, Python, Web Development</p>
+
+                        <button class="primary-btn mentor-request"
+                                data-mentor="Rahul Sharma">
+                            Request Mentorship
+                        </button>
+                    </div>
+
+                    <!-- Mentor 2 -->
+                    <div class="mentor-card"
+                         data-name="Priya Patil"
+                         data-field="Finance"
+                         data-skills="Finance Accounting Investment">
+
+                        <div class="mentor-avatar">PP</div>
+                        <h3>Priya Patil</h3>
+                        <p class="mentor-role">Financial Analyst</p>
+                        <p>Global Finance Ltd., Mumbai</p>
+                        <p><strong>Experience:</strong> 5 Years</p>
+                        <p><strong>Skills:</strong> Finance, Accounting, Investment</p>
+
+                        <button class="primary-btn mentor-request"
+                                data-mentor="Priya Patil">
+                            Request Mentorship
+                        </button>
+                    </div>
+
+                    <!-- Mentor 3 -->
+                    <div class="mentor-card"
+                         data-name="Amit Deshmukh"
+                         data-field="Marketing"
+                         data-skills="Digital Marketing SEO Branding">
+
+                        <div class="mentor-avatar">AD</div>
+                        <h3>Amit Deshmukh</h3>
+                        <p class="mentor-role">Digital Marketing Manager</p>
+                        <p>MarketPro Agency, Nashik</p>
+                        <p><strong>Experience:</strong> 6 Years</p>
+                        <p><strong>Skills:</strong> SEO, Branding, Marketing</p>
+
+                        <button class="primary-btn mentor-request"
+                                data-mentor="Amit Deshmukh">
+                            Request Mentorship
+                        </button>
+                    </div>
+
+                </div>
+
+                <p id="mentorEmpty" style="display:none;">
+                    No mentors found matching your search.
+                </p>
+
+                <p id="mentorshipMessage" class="form-message"></p>
+            </section>
+
+            <!-- Mentorship Process -->
+            <section class="dashboard-card">
+                <div class="card-heading">
+                    <h3>How Mentorship Works</h3>
+                </div>
+
+                <div class="mentorship-steps">
+
+                    <div class="step-item">
+                        <h3>01</h3>
+                        <h4>Explore</h4>
+                        <p>Find mentors based on your career interests.</p>
+                    </div>
+
+                    <div class="step-item">
+                        <h3>02</h3>
+                        <h4>Connect</h4>
+                        <p>Send a mentorship request to your preferred mentor.</p>
+                    </div>
+
+                    <div class="step-item">
+                        <h3>03</h3>
+                        <h4>Get Guidance</h4>
+                        <p>Receive career advice and professional guidance.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <footer class="dashboard-footer">
+                © 2026 CampusConnect | Alumni Networking Platform
+            </footer>
+
+        </section>
+    </main>
+</div>
+
+<script src="../assets/js/alumni-common.js"></script>
+<script src="../assets/js/alumni-mentorship.js"></script>
+
+</body>
+</html>

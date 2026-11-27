@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alumni Dashboard | CampusConnect</title>
+
+    <!-- Common Alumni CSS -->
+    <link rel="stylesheet" href="../assets/css/alumni.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/alumni-dashboard.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <span class="brand-logo">CC</span>
+            <span>CampusConnect</span>
+        </div>
+
+        <p class="menu-heading">ALUMNI MENU</p>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html" class="active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="my-profile.html">
+                <span>♙</span> My Profile
+            </a>
+
+            <a href="alumni-directory.html">
+                <span>◎</span> Alumni Directory
+            </a>
+
+            <a href="events.html">
+                <span>▣</span> Events & Reunions
+            </a>
+
+            <a href="jobs.html">
+                <span>▤</span> Jobs & Opportunities
+            </a>
+
+            <a href="mentorship.html">
+                <span>♧</span> Mentorship
+            </a>
+
+            <a href="notifications.html">
+                <span>♢</span> Notifications
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-help">
+                <h4>Stay Connected!</h4>
+                <p>
+                    Build meaningful connections with
+                    your alumni community.
+                </p>
+            </div>
+
+            <a href="login.html" class="logout-link">
+                ↪ Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP NAVBAR -->
+        <header class="topbar">
+
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                <small>ALUMNI COMMUNITY</small>
+                <h3>Dashboard</h3>
+            </div>
+
+            <div class="topbar-right">
+
+                <span id="todayDate"></span>
+
+                <a href="notifications.html" class="notification-icon">
+                    ♢
+                </a>
+
+                <div class="user-info">
+                    <div class="user-avatar" id="headerAvatar">
+                        A
+                    </div>
+
+                    <span id="headerUserName">
+                        Alumni
+                    </span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <div class="dashboard-content">
+
+            <!-- WELCOME SECTION -->
+            <section class="welcome-banner">
+
+                <div>
+                    <p>YOUR COMMUNITY, YOUR NETWORK</p>
+
+                    <h1>
+                        Welcome Back,
+                        <span id="welcomeName">Alumni</span>!
+                    </h1>
+
+                    <p>
+                        Reconnect with your classmates,
+                        explore opportunities and stay
+                        connected with your college.
+                    </p>
+                </div>
+
+                <div class="welcome-icon">
+                    ✦
+                </div>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+            <section class="stats-container">
+
+                <div class="stat-card">
+                    <div class="stat-icon">◎</div>
+                    <p>Total Connections</p>
+                    <h2>128</h2>
+                    <small>Grow your network</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">▣</div>
+                    <p>Upcoming Events</p>
+                    <h2>03</h2>
+                    <small>Events this month</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">▤</div>
+                    <p>Job Opportunities</p>
+                    <h2>12</h2>
+                    <small>Recently posted</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">✓</div>
+                    <p>Profile Status</p>
+                    <h2 class="status-active">Active</h2>
+                    <small>Keep your profile updated</small>
+                </div>
+
+            </section>
+
+
+            <!-- PROFILE AND QUICK ACCESS -->
+            <section class="dashboard-grid">
+
+                <!-- PROFILE SUMMARY -->
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <small>YOUR PROFILE</small>
+                            <h2>Professional Snapshot</h2>
+                        </div>
+
+                        <a href="my-profile.html">
+                            Edit Profile →
+                        </a>
+                    </div>
+
+                    <div class="profile-summary">
+
+                        <div class="profile-avatar" id="profileAvatar">
+                            A
+                        </div>
+
+                        <div>
+                            <h3 id="summaryName">
+                                Alumni Name
+                            </h3>
+
+                            <p id="summaryRole">
+                                Add your designation and organization
+                            </p>
+
+                            <span class="verified-badge">
+                                ✓ Verified Alumni
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="profile-details">
+
+                        <div>
+                            <span>Course</span>
+                            <strong id="summaryCourse">
+                                Not Added
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Passing Year</span>
+                            <strong id="summaryYear">
+                                Not Added
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Email</span>
+                            <strong id="summaryEmail">
+                                Not Added
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACCESS -->
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <small>QUICK ACCESS</small>
+                            <h2>Explore CampusConnect</h2>
+                        </div>
+                    </div>
+
+                    <div class="quick-access-grid">
+
+                        <a href="alumni-directory.html">
+                            <span>◎</span>
+                            <strong>Alumni Directory</strong>
+                            <small>Find your batchmates</small>
+                        </a>
+
+                        <a href="events.html">
+                            <span>▣</span>
+                            <strong>Events & Reunions</strong>
+                            <small>Join college events</small>
+                        </a>
+
+                        <a href="jobs.html">
+                            <span>▤</span>
+                            <strong>Career Opportunities</strong>
+                            <small>Explore job openings</small>
+                        </a>
+
+                        <a href="mentorship.html">
+                            <span>♧</span>
+                            <strong>Mentorship</strong>
+                            <small>Share your experience</small>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- UPCOMING EVENTS -->
+            <section class="dashboard-card events-section">
+
+                <div class="card-heading">
+                    <div>
+                        <small>STAY CONNECTED</small>
+                        <h2>Upcoming Events</h2>
+                    </div>
+
+                    <a href="events.html">
+                        View All →
+                    </a>
+                </div>
+
+                <div class="event-item">
+
+                    <div class="event-date">
+                        <h2>15</h2>
+                        <span>DEC</span>
+                    </div>
+
+                    <div class="event-info">
+                        <h3>Annual Alumni Meet</h3>
+                        <p>
+                            College Auditorium · 10:00 AM
+                        </p>
+                    </div>
+
+                    <span class="event-status">
+                        Registration Open
+                    </span>
+
+                </div>
+
+                <div class="event-item">
+
+                    <div class="event-date">
+                        <h2>22</h2>
+                        <span>DEC</span>
+                    </div>
+
+                    <div class="event-info">
+                        <h3>Career Guidance Session</h3>
+                        <p>
+                            Online Session · 4:00 PM
+                        </p>
+                    </div>
+
+                    <span class="event-status">
+                        Online
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                © 2026 CampusConnect. All Rights Reserved.
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script src="../assets/js/alumni-common.js"></script>
+<script src="../assets/js/alumni-dashboard.js"></script>
+
+</body>
+</html>
