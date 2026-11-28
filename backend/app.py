@@ -6,7 +6,7 @@ from config import get_db_connection
 from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 app.register_blueprint(admin_bp)
 app.register_blueprint(alumni_bp)
 app.register_blueprint(auth_bp)
