@@ -3,8 +3,10 @@ from routes.auth import auth_bp
 from routes.alumni import alumni_bp
 from flask import Flask
 from config import get_db_connection
+from flask_cors import CORS
 
 app = Flask(__name__)
+
 app.register_blueprint(admin_bp)
 app.register_blueprint(alumni_bp)
 app.register_blueprint(auth_bp)
