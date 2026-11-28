@@ -3,12 +3,12 @@
 // CAMPUSCONNECT - ADMIN DASHBOARD
 // ==================================
 
-// Check demo login session
-const isLoggedIn =
-    localStorage.getItem("campusAdminLoggedIn") === "true" ||
-    sessionStorage.getItem("campusAdminLoggedIn") === "true";
+// Check Admin Login Session
+const adminSession =
+    localStorage.getItem("campusAdmin") ||
+    sessionStorage.getItem("campusAdmin");
 
-if (!isLoggedIn) {
+if (!adminSession) {
     window.location.replace("login.html");
 }
 
@@ -35,8 +35,8 @@ logoutBtn.addEventListener("click", function () {
 
     if (confirmLogout) {
 
-        localStorage.removeItem("campusAdminLoggedIn");
-        sessionStorage.removeItem("campusAdminLoggedIn");
+        localStorage.removeItem("campusAdmin");
+        sessionStorage.removeItem("campusAdmin");
 
         window.location.replace("login.html");
 
@@ -174,10 +174,8 @@ if (viewAllBtn) {
         profileLogout.addEventListener("click", function () {
 
             if (confirm("Are you sure you want to logout?")) {
-
-                localStorage.removeItem("campusAdminLoggedIn");
-                sessionStorage.removeItem("campusAdminLoggedIn");
-
+                localStorage.removeItem("campusAdmin");
+                sessionStorage.removeItem("campusAdmin");
                 window.location.replace("login.html");
 
             }

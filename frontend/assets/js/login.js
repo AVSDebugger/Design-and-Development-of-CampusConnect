@@ -1,9 +1,4 @@
 
-// ==================================
-// CAMPUSCONNECT - ADMIN LOGIN
-// Flask Backend API Authentication
-// ==================================
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const loginForm = document.getElementById("loginForm");
@@ -11,9 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const togglePassword = document.getElementById("togglePassword");
     const loginError = document.getElementById("loginError");
 
+    function showMessage(message) {
+        loginError.textContent = message;
+    }
+
     // Show / Hide Password
     togglePassword.addEventListener("click", function () {
-
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
             togglePassword.textContent = "Hide";
@@ -21,32 +19,25 @@ document.addEventListener("DOMContentLoaded", function () {
             passwordInput.type = "password";
             togglePassword.textContent = "Show";
         }
-
     });
 
-    // Admin Login
+    // Admin Login API
     loginForm.addEventListener("submit", async function (event) {
 
         event.preventDefault();
 
-        const email = document.getElementById("email").value.trim().toLowerCase();
+        const email = document.getElementById("email").value.trim();
         const password = passwordInput.value;
         const rememberMe = document.getElementById("rememberMe").checked;
 
-        loginError.textContent = "";
+        showMessage("");
 
         if (!email || !password) {
-            loginError.textContent = "Please enter your email and password.";
+            showMessage("Please enter your email and password.");
             return;
         }
 
-        const loginButton = loginForm.querySelector('button[type="submit"]');
-
-        loginButton.disabled = true;
-        loginButton.textContent = "Signing in...";
-
         try {
-
             const response = await fetch(
                 "http://127.0.0.1:5000/api/admin/login",
                 {
@@ -61,66 +52,45 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             );
 
-            const result = await response.json();
+            const data = await response.json();
 
             if (!response.ok) {
-                loginError.textContent =
-                    result.message || "Invalid email or password.";
+                showMessage(data.message || "Invalid email or password.");
                 return;
             }
 
-            // Store basic admin session details
-            const adminSession = {
-                admin_id: result.admin_id,
-                name: result.name,
+            const adminData = {
+                admin_id: data.admin_id,
+                name: data.name,
                 email: email,
                 isLoggedIn: true
             };
 
             if (rememberMe) {
-
                 localStorage.setItem(
-                    "campusAdminSession",
-                    JSON.stringify(adminSession)
+                    "campusAdmin",
+                    JSON.stringify(adminData)
                 );
-
             } else {
-
                 sessionStorage.setItem(
-                    "campusAdminSession",
-                    JSON.stringify(adminSession)
+                    "campusAdmin",
+                    JSON.stringify(adminData)
                 );
-
             }
 
             window.location.href = "dashboard.html";
 
         } catch (error) {
-
             console.error("Admin Login Error:", error);
-
-            loginError.textContent =
-                "Unable to connect to server. Please try again.";
-
-        } finally {
-
-            loginButton.disabled = false;
-            loginButton.innerHTML = 'Sign In <span>→</span>';
-
+            showMessage("Unable to connect to server. Please try again.");
         }
-
     });
 
     // Forgot Password
     document.getElementById("forgotPassword")
         .addEventListener("click", function (event) {
-
             event.preventDefault();
-
-            alert(
-                "Please contact your system administrator to reset your password."
-            );
-
+            alert("Please contact your system administrator to reset your password.");
         });
 
 });
