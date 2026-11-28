@@ -1,7 +1,7 @@
 
 /* =========================================
    CAMPUSCONNECT - ALUMNI LOGIN
-   Demo Frontend Authentication
+   Backend API Authentication
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!loginForm) return;
 
-    // Display messages
     function showMessage(message, type) {
         if (!loginMessage) return;
 
@@ -23,21 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
             : "message-error";
     }
 
-    // Login form submission
-    loginForm.addEventListener("submit", function (event) {
+    loginForm.addEventListener("submit", async function (event) {
 
         event.preventDefault();
 
         const email = emailInput.value.trim().toLowerCase();
         const password = passwordInput.value;
 
-        // Validate empty fields
         if (!email || !password) {
             showMessage("Please enter your email and password.", "error");
             return;
         }
 
-        // Validate email format
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailPattern.test(email)) {
@@ -45,66 +41,73 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Retrieve registered alumni details
-        let registeredAlumni = null;
-
-        try {
-            registeredAlumni = JSON.parse(
-                localStorage.getItem("campusconnectAlumni")
-            );
-        } catch (error) {
-            console.error("Error reading alumni data:", error);
-        }
-
-        // Find registered alumni account
-const alumniList = Array.isArray(registeredAlumni)
-    ? registeredAlumni
-    : registeredAlumni
-        ? [registeredAlumni]
-        : [];
-
-const matchedAlumni = alumniList.find(function (alumni) {
-    return (alumni.email || "").toLowerCase() === email;
-});
-
-// Check whether account exists
-if (!matchedAlumni) {
-    showMessage(
-        "No registered alumni account found. Please register first.",
-        "error"
-    );
-    return;
-}
-
-// Verify password
-if (matchedAlumni.password !== password) {
-    showMessage("Invalid email or password.", "error");
-    return;
-}
-
-// Use matched alumni details
-registeredAlumni = matchedAlumni;
-
-        // Save logged-in session separately
-        const loggedInAlumni = {
-            name: registeredAlumni.name,
-            email: registeredAlumni.email,
-            course: registeredAlumni.course,
-            passingYear: registeredAlumni.passingYear,
-            isLoggedIn: true
-        };
-
-        localStorage.setItem(
-            "campusconnectLoggedInAlumni",
-            JSON.stringify(loggedInAlumni)
+        const submitButton = loginForm.querySelector(
+            'button[type="submit"], input[type="submit"]'
         );
 
-        showMessage("Login successful! Redirecting...", "success");
+        if (submitButton) submitButton.disabled = true;
 
-        // Redirect to dashboard
-        setTimeout(function () {
-            window.location.href = "dashboard.html";
-        }, 1000);
+        showMessage("Checking login details...", "success");
+
+        try {
+
+            const response = await fetch(
+                "http://127.0.0.1:5000/api/alumni/login",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                }
+            );
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                showMessage(
+                    result.message || "Login failed.",
+                    "error"
+                );
+                return;
+            }
+
+            // Save basic logged-in user details
+            const loggedInAlumni = {
+                alumni_id: result.alumni.alumni_id,
+                name: result.alumni.name,
+                email: result.alumni.email,
+                isLoggedIn: true
+            };
+
+            localStorage.setItem(
+                "campusconnectLoggedInAlumni",
+                JSON.stringify(loggedInAlumni)
+            );
+
+            showMessage("Login successful! Redirecting...", "success");
+
+            setTimeout(function () {
+                window.location.href = "dashboard.html";
+            }, 1000);
+
+        } catch (error) {
+
+            console.error("Login Error:", error);
+
+            showMessage(
+                "Unable to connect to server. Please try again.",
+                "error"
+            );
+
+        } finally {
+
+            if (submitButton) submitButton.disabled = false;
+
+        }
 
     });
 
