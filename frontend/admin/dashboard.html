@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | CampusConnect</title>
+
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-logo">CC</div>
+                <div>
+                    <h2>CampusConnect</h2>
+                    <span>Admin Portal</span>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+
+                <p class="menu-heading">MAIN MENU</p>
+
+                <a href="dashboard.html" class="menu-item active">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a href="#" class="menu-item" data-page="courses">
+                    <span>▤</span> Course Selection
+                </a>
+
+                <a href="#" class="menu-item" data-page="batches">
+                    <span>▣</span> Batch Selection
+                </a>
+
+                <a href="#" class="menu-item" data-page="alumni">
+                    <span>♙</span> Alumni List
+                </a>
+
+                <a href="#" class="menu-item" data-page="verification">
+                    <span>✓</span> Verification
+                    <span class="menu-count">12</span>
+                </a>
+
+                <p class="menu-heading">ACCOUNT</p>
+
+                <a href="#" class="menu-item" data-page="settings">
+                    <span>⚙</span> Settings
+                </a>
+
+                <button class="menu-item logout-menu" id="logoutBtn">
+                    <span>↪</span> Logout
+                </button>
+
+            </div>
+
+            <div class="sidebar-bottom">
+                <div class="admin-avatar">AD</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <span>System Admin</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Navigation -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+                    <button class="menu-toggle" id="menuToggle">☰</button>
+
+                    <div>
+                        <h2>Dashboard Overview</h2>
+                        <p>Welcome back! Here's what's happening today.</p>
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="date-display" id="currentDate"></div>
+
+                    <div class="notification-icon">
+                        ♧
+                        <span class="notification-dot"></span>
+                    </div>
+
+                    
+<!-- ADMIN PROFILE SECTION -->
+
+<div class="admin-profile-container">
+
+    <button class="admin-profile-button"
+            id="adminProfileButton"
+            type="button"
+            aria-expanded="false"
+            aria-controls="adminProfileDropdown">
+
+        <div class="admin-avatar">
+            AD
+        </div>
+
+        <div class="admin-profile-heading">
+            <h4>Admin</h4>
+            <span>Administrator</span>
+        </div>
+
+        <span class="profile-arrow">▼</span>
+
+    </button>
+
+    <!-- PROFILE DROPDOWN -->
+
+    <div class="admin-profile-dropdown"
+         id="adminProfileDropdown"
+         hidden>
+
+        <div class="profile-card-header">
+
+            <div class="admin-avatar large-avatar">AD</div>
+
+            <div>
+                <h3>Anjali Deore</h3>
+                <p>System Administrator</p>
+                <span class="admin-role-badge">Admin Account</span>
+            </div>
+
+        </div>
+
+        <div class="profile-card-details">
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Full Name</span>
+                <strong>Anjali Deore</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Email Address</span>
+                <strong>admin@campusconnect.com</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Role</span>
+                <strong>Administrator</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Department</span>
+                <strong>Administration</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Account Status</span>
+                <strong class="account-active">Active</strong>
+            </div>
+
+        </div>
+
+        <div class="profile-card-footer">
+            <button type="button"
+                    class="profile-logout-btn"
+                    id="profileLogoutBtn">
+                Logout
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+                </div>
+
+            </header>
+
+            <!-- Dashboard Content -->
+            <section class="dashboard-container">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p>Monitor and manage your college alumni community.</p>
+                    </div>
+
+                    <button class="primary-btn" id="viewAlumniBtn">
+                        View All Alumni →
+                    </button>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <div class="stat-icon blue">♙</div>
+                            <span class="stat-label">TOTAL ALUMNI</span>
+                        </div>
+                        <h2>1,250</h2>
+                        <p>Registered alumni</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <div class="stat-icon green">✓</div>
+                            <span class="stat-label">VERIFIED ALUMNI</span>
+                        </div>
+                        <h2>1,080</h2>
+                        <p>Successfully verified</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <div class="stat-icon orange">◷</div>
+                            <span class="stat-label">PENDING REQUESTS</span>
+                        </div>
+                        <h2>120</h2>
+                        <p>Awaiting verification</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <div class="stat-icon red">✕</div>
+                            <span class="stat-label">REJECTED</span>
+                        </div>
+                        <h2>50</h2>
+                        <p>Rejected registrations</p>
+                    </div>
+
+                </div>
+
+                <!-- Dashboard Lower Section -->
+                <div class="dashboard-grid">
+
+                    <!-- Recent Registrations -->
+                    <div class="content-card recent-card">
+
+                        <div class="card-heading">
+                            <div>
+                                <h3>Recent Alumni Registrations</h3>
+                                <p>Latest alumni registration activity</p>
+                            </div>
+
+                            <button class="text-btn" id="viewAllBtn">
+                                View All
+                            </button>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ALUMNI NAME</th>
+                                        <th>COURSE</th>
+                                        <th>BATCH</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="table-user">
+                                                <div class="user-avatar avatar-blue">RS</div>
+                                                <span>Rahul Sharma</span>
+                                            </div>
+                                        </td>
+                                        <td>BCA</td>
+                                        <td>2022</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="table-user">
+                                                <div class="user-avatar avatar-purple">AP</div>
+                                                <span>Ananya Patil</span>
+                                            </div>
+                                        </td>
+                                        <td>B.Sc CS</td>
+                                        <td>2023</td>
+                                        <td><span class="status verified">Verified</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="table-user">
+                                                <div class="user-avatar avatar-orange">SK</div>
+                                                <span>Sneha Kulkarni</span>
+                                            </div>
+                                        </td>
+                                        <td>BCA</td>
+                                        <td>2021</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="table-user">
+                                                <div class="user-avatar avatar-green">AM</div>
+                                                <span>Aditya More</span>
+                                            </div>
+                                        </td>
+                                        <td>B.Sc IT</td>
+                                        <td>2020</td>
+                                        <td><span class="status verified">Verified</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="table-user">
+                                                <div class="user-avatar avatar-pink">PG</div>
+                                                <span>Priya Gupta</span>
+                                            </div>
+                                        </td>
+                                        <td>BCA</td>
+                                        <td>2024</td>
+                                        <td><span class="status rejected">Rejected</span></td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="content-card quick-card">
+
+                        <div class="card-heading">
+                            <div>
+                                <h3>Quick Actions</h3>
+                                <p>Frequently used options</p>
+                            </div>
+                        </div>
+
+                        <div class="quick-actions">
+
+                            <button class="action-item" data-page="alumni">
+                                <span class="action-icon blue">♙</span>
+                                <span>
+                                    <strong>View Alumni</strong>
+                                    <small>Browse alumni records</small>
+                                </span>
+                                <span class="action-arrow">→</span>
+                            </button>
+
+                            <button class="action-item" data-page="verification">
+                                <span class="action-icon orange">✓</span>
+                                <span>
+                                    <strong>Verify Requests</strong>
+                                    <small>Review pending registrations</small>
+                                </span>
+                                <span class="action-arrow">→</span>
+                            </button>
+
+                            <button class="action-item" data-page="courses">
+                                <span class="action-icon purple">▤</span>
+                                <span>
+                                    <strong>Manage Courses</strong>
+                                    <small>Select academic courses</small>
+                                </span>
+                                <span class="action-arrow">→</span>
+                            </button>
+
+                            <button class="action-item" data-page="batches">
+                                <span class="action-icon green">▣</span>
+                                <span>
+                                    <strong>Manage Batches</strong>
+                                    <small>Browse passing-year batches</small>
+                                </span>
+                                <span class="action-arrow">→</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <footer class="dashboard-footer">
+                    © 2026 CampusConnect | Alumni Networking and Engagement Platform
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

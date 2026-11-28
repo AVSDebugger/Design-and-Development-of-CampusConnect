@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni List | CampusConnect</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="dashboard-body">
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">CC</div>
+            <div><h2>CampusConnect</h2><span>Admin Portal</span></div>
+        </div>
+
+        <div class="sidebar-menu">
+            <p class="menu-heading">MAIN MENU</p>
+            <a href="dashboard.html" class="menu-item"><span>▦</span> Dashboard</a>
+            <a href="course-selection.html" class="menu-item"><span>▤</span> Course Selection</a>
+            <a href="batch-selection.html" class="menu-item"><span>▣</span> Batch Selection</a>
+            <a href="alumni-list.html" class="menu-item active"><span>♙</span> Alumni List</a>
+            <a href="verification.html" class="menu-item"><span>✓</span> Verification</a>
+            <p class="menu-heading">ACCOUNT</p>
+            <button class="menu-item logout-menu" id="logoutBtn"><span>↪</span> Logout</button>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="admin-avatar">AD</div>
+            <div><strong>Administrator</strong><span>System Admin</span></div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <div>
+                    <h2>Alumni Management</h2>
+                    <p>View and manage registered alumni.</p>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="date-display" id="currentDate"></div>
+                <!-- <div class="topbar-profile">
+                    <div class="admin-avatar">AD</div>
+                    <div><strong>Admin</strong><span>Administrator</span></div>
+                </div> -->
+                <!-- ADMIN PROFILE SECTION -->
+
+<div class="admin-profile-container">
+
+    <button class="admin-profile-button"
+            id="adminProfileButton"
+            type="button"
+            aria-expanded="false"
+            aria-controls="adminProfileDropdown">
+
+        <div class="admin-avatar">
+            AD
+        </div>
+
+        <div class="admin-profile-heading">
+            <h4>Admin</h4>
+            <span>Administrator</span>
+        </div>
+
+        <span class="profile-arrow">▼</span>
+
+    </button>
+
+    <!-- PROFILE DROPDOWN -->
+
+    <div class="admin-profile-dropdown"
+         id="adminProfileDropdown"
+         hidden>
+
+        <div class="profile-card-header">
+
+            <div class="admin-avatar large-avatar">AD</div>
+
+            <div>
+                <h3>Anjali Deore</h3>
+                <p>System Administrator</p>
+                <span class="admin-role-badge">Admin Account</span>
+            </div>
+
+        </div>
+
+        <div class="profile-card-details">
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Full Name</span>
+                <strong>Anjali Deore</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Email Address</span>
+                <strong>admin@campusconnect.com</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Role</span>
+                <strong>Administrator</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Department</span>
+                <strong>Administration</strong>
+            </div>
+
+            <div class="profile-info-row">
+                <span class="profile-info-label">Account Status</span>
+                <strong class="account-active">Active</strong>
+            </div>
+
+        </div>
+
+        <div class="profile-card-footer">
+            <button type="button"
+                    class="profile-logout-btn"
+                    id="profileLogoutBtn">
+                Logout
+            </button>
+        </div>
+
+    </div>
+
+</div>
+            </div>
+        </header>
+
+        <section class="dashboard-container">
+
+            <div class="breadcrumb">
+                <a href="dashboard.html">Dashboard</a> / Alumni List
+            </div>
+
+            <div class="page-heading">
+                <div>
+                    <h1>Alumni Directory</h1>
+                    <p>Manage and explore your college alumni records.</p>
+                </div>
+                <span class="total-records" id="recordCount">6 Alumni Records</span>
+            </div>
+
+            <div class="content-card">
+
+                <div class="filter-toolbar">
+
+                    <input
+                        type="search"
+                        id="alumniSearch"
+                        placeholder="Search by name or email..."
+                        class="search-input"
+                    >
+
+                    <select id="courseFilter" class="filter-select">
+                        <option value="">All Courses</option>
+                        <option value="BCA">BCA</option>
+                        <option value="B.Sc Computer Science">B.Sc Computer Science</option>
+                        <option value="B.Sc Information Technology">B.Sc IT</option>
+                        <option value="MCA">MCA</option>
+                    </select>
+
+                    <select id="batchFilter" class="filter-select">
+                        <option value="">All Batches</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+
+                    <select id="statusFilter" class="filter-select">
+                        <option value="">All Status</option>
+                        <option value="Verified">Verified</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+
+                </div>
+
+                <div class="table-responsive">
+                    <table id="alumniTable">
+                        <thead>
+                            <tr>
+                                <th>ALUMNI NAME</th>
+                                <th>EMAIL</th>
+                                <th>COURSE</th>
+                                <th>BATCH</th>
+                                <th>STATUS</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="alumniTableBody">
+
+                            <tr data-name="Rahul Sharma" data-email="rahul@gmail.com" data-course="BCA" data-batch="2022" data-status="Pending">
+                                <td>Rahul Sharma</td>
+                                <td>rahul@gmail.com</td>
+                                <td>BCA</td>
+                                <td>2022</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><button class="small-action view-profile" data-id="1">View</button></td>
+                            </tr>
+
+                            <tr data-name="Ananya Patil" data-email="ananya@gmail.com" data-course="B.Sc Computer Science" data-batch="2023" data-status="Verified">
+                                <td>Ananya Patil</td>
+                                <td>ananya@gmail.com</td>
+                                <td>B.Sc CS</td>
+                                <td>2023</td>
+                                <td><span class="status verified">Verified</span></td>
+                                <td><button class="small-action view-profile" data-id="2">View</button></td>
+                            </tr>
+
+                            <tr data-name="Sneha Kulkarni" data-email="sneha@gmail.com" data-course="BCA" data-batch="2021" data-status="Pending">
+                                <td>Sneha Kulkarni</td>
+                                <td>sneha@gmail.com</td>
+                                <td>BCA</td>
+                                <td>2021</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><button class="small-action view-profile" data-id="3">View</button></td>
+                            </tr>
+
+                            <tr data-name="Aditya More" data-email="aditya@gmail.com" data-course="B.Sc Information Technology" data-batch="2020" data-status="Verified">
+                                <td>Aditya More</td>
+                                <td>aditya@gmail.com</td>
+                                <td>B.Sc IT</td>
+                                <td>2020</td>
+                                <td><span class="status verified">Verified</span></td>
+                                <td><button class="small-action view-profile" data-id="4">View</button></td>
+                            </tr>
+
+                            <tr data-name="Priya Gupta" data-email="priya@gmail.com" data-course="BCA" data-batch="2024" data-status="Rejected">
+                                <td>Priya Gupta</td>
+                                <td>priya@gmail.com</td>
+                                <td>BCA</td>
+                                <td>2024</td>
+                                <td><span class="status rejected">Rejected</span></td>
+                                <td><button class="small-action view-profile" data-id="5">View</button></td>
+                            </tr>
+
+                            <tr data-name="Neha Joshi" data-email="neha@gmail.com" data-course="MCA" data-batch="2024" data-status="Verified">
+                                <td>Neha Joshi</td>
+                                <td>neha@gmail.com</td>
+                                <td>MCA</td>
+                                <td>2024</td>
+                                <td><span class="status verified">Verified</span></td>
+                                <td><button class="small-action view-profile" data-id="6">View</button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <p id="noResults" class="empty-message" hidden>
+                    No alumni records found.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="../assets/js/admin-pages.js"></script>
+</body>
+</html>

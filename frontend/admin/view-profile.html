@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Profile | CampusConnect</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="dashboard-body">
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">CC</div>
+            <div><h2>CampusConnect</h2><span>Admin Portal</span></div>
+        </div>
+
+        <div class="sidebar-menu">
+            <p class="menu-heading">MAIN MENU</p>
+            <a href="dashboard.html" class="menu-item"><span>▦</span> Dashboard</a>
+            <a href="course-selection.html" class="menu-item"><span>▤</span> Course Selection</a>
+            <a href="batch-selection.html" class="menu-item"><span>▣</span> Batch Selection</a>
+            <a href="alumni-list.html" class="menu-item active"><span>♙</span> Alumni List</a>
+            <a href="verification.html" class="menu-item"><span>✓</span> Verification</a>
+            <p class="menu-heading">ACCOUNT</p>
+            <button class="menu-item logout-menu" id="logoutBtn"><span>↪</span> Logout</button>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="admin-avatar">AD</div>
+            <div><strong>Administrator</strong><span>System Admin</span></div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <div>
+                    <h2>Alumni Profile</h2>
+                    <p>View complete alumni information.</p>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <div class="date-display" id="currentDate"></div>
+                <div class="topbar-profile">
+                    <div class="admin-avatar">AD</div>
+                    <div><strong>Admin</strong><span>Administrator</span></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard-container">
+
+            <div class="breadcrumb">
+                <a href="dashboard.html">Dashboard</a> /
+                <a href="alumni-list.html">Alumni List</a> /
+                Profile
+            </div>
+
+            <div class="profile-header-card">
+                <div class="profile-avatar" id="profileInitials">RS</div>
+
+                <div class="profile-heading-info">
+                    <h1 id="profileName">Rahul Sharma</h1>
+                    <p id="profileCourse">Bachelor of Computer Applications</p>
+                    <span class="status pending" id="profileStatus">Pending</span>
+                </div>
+
+                <a href="alumni-list.html" class="secondary-btn">← Back to Alumni List</a>
+            </div>
+
+            <div class="profile-grid">
+
+                <div class="content-card profile-section">
+                    <h3>Personal Information</h3>
+
+                    <div class="profile-detail">
+                        <span>Full Name</span>
+                        <strong id="detailName">Rahul Sharma</strong>
+                    </div>
+
+                    <div class="profile-detail">
+                        <span>Email Address</span>
+                        <strong id="detailEmail">rahul@gmail.com</strong>
+                    </div>
+
+                    <div class="profile-detail">
+                        <span>Phone Number</span>
+                        <strong id="detailPhone">+91 9876543210</strong>
+                    </div>
+
+                    <div class="profile-detail">
+                        <span>Location</span>
+                        <strong id="detailLocation">Nashik, Maharashtra</strong>
+                    </div>
+                </div>
+
+                <div class="content-card profile-section">
+                    <h3>Academic Information</h3>
+
+                    <div class="profile-detail">
+                        <span>Course</span>
+                        <strong id="detailCourse">BCA</strong>
+                    </div>
+
+                    <div class="profile-detail">
+                        <span>Passing Year</span>
+                        <strong id="detailBatch">2022</strong>
+                    </div>
+
+                    <div class="profile-detail">
+                        <span>College</span>
+                        <strong id="detailCollege">College Name</strong>
+                    </div>
+
+                    <div class="profile-detail">
+                        <span>Registration ID</span>
+                        <strong id="detailId">CC-001</strong>
+                    </div>
+                </div>
+
+            <div class="content-card profile-section">
+                <h3>Professional Information</h3>
+
+            <div id="alumniExperiences">
+
+                <div class="experience-card">
+                    <h4>Work Experience</h4>
+                    <p>No work experience available.</p>
+                </div>
+
+            </div>
+        </div>
+
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="../assets/js/admin-pages.js"></script>
+</body>
+</html>

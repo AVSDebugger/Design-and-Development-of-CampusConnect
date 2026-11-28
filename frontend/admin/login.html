@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | CampusConnect</title>
+
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="login-body">
+
+    <div class="login-wrapper">
+
+        <div class="login-brand">
+            <div class="brand-logo">CC</div>
+            <h1>CampusConnect</h1>
+            <p>Connecting Alumni, Strengthening Communities.</p>
+
+            <div class="brand-illustration">
+                <div class="illustration-circle">
+                    <span>🎓</span>
+                </div>
+                <h2>Empowering Alumni Connections</h2>
+                <p>Manage, connect and grow your alumni community.</p>
+            </div>
+
+            <div class="brand-footer">
+                © 2026 CampusConnect. All rights reserved.
+            </div>
+        </div>
+
+        <div class="login-form-section">
+
+            <div class="login-card">
+                <div class="mobile-logo">CC</div>
+
+                <span class="welcome-label">ADMINISTRATION PORTAL</span>
+                <h2>Welcome Back!</h2>
+                <p class="login-subtitle">
+                    Please sign in to access your admin dashboard.
+                </p>
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+                            <button type="button" id="togglePassword">
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="login-options">
+                        <label class="remember-label">
+                            <input type="checkbox" id="rememberMe">
+                            Remember me
+                        </label>
+
+                        <a href="#" id="forgotPassword">
+                            Forgot Password?
+                        </a>
+                    </div>
+
+                    <p id="loginError" class="error-message"></p>
+
+                    <button type="submit" class="login-btn">
+                        Sign In <span>→</span>
+                    </button>
+
+                </form>
+
+                <div class="login-security">
+                    <span>🔒</span>
+                    Secure Admin Access
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../assets/js/login.js"></script>
+</body>
+</html>
