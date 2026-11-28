@@ -56,25 +56,34 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error reading alumni data:", error);
         }
 
-        // Check whether an account exists
-        if (!registeredAlumni) {
-            showMessage(
-                "No registered alumni account found. Please register first.",
-                "error"
-            );
-            return;
-        }
+        // Find registered alumni account
+const alumniList = Array.isArray(registeredAlumni)
+    ? registeredAlumni
+    : registeredAlumni
+        ? [registeredAlumni]
+        : [];
 
-        // Verify credentials
-        const storedEmail = (registeredAlumni.email || "").toLowerCase();
+const matchedAlumni = alumniList.find(function (alumni) {
+    return (alumni.email || "").toLowerCase() === email;
+});
 
-        if (
-            storedEmail !== email ||
-            registeredAlumni.password !== password
-        ) {
-            showMessage("Invalid email or password.", "error");
-            return;
-        }
+// Check whether account exists
+if (!matchedAlumni) {
+    showMessage(
+        "No registered alumni account found. Please register first.",
+        "error"
+    );
+    return;
+}
+
+// Verify password
+if (matchedAlumni.password !== password) {
+    showMessage("Invalid email or password.", "error");
+    return;
+}
+
+// Use matched alumni details
+registeredAlumni = matchedAlumni;
 
         // Save logged-in session separately
         const loggedInAlumni = {
