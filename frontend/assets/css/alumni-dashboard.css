@@ -848,3 +848,57 @@
         padding-left: 0;
     }
 }
+/* =====================================
+   MULTIPLE WORK EXPERIENCE
+===================================== */
+
+.experience-card {
+    padding: 18px;
+    margin-bottom: 18px;
+    border: 1px solid #F0DCDD;
+    border-radius: 12px;
+    background: #FFFBFB;
+}
+
+.experience-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.experience-card-header h3 {
+    color: #861C2A;
+    font-size: 15px;
+}
+
+.remove-experience {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 7px;
+    background: #FDEBEC;
+    color: #B42332;
+    cursor: pointer;
+}
+
+.add-experience-btn {
+    margin-top: 12px;
+    padding: 10px 16px;
+    border: 1px dashed #B42332;
+    border-radius: 8px;
+    background: #FFFBFB;
+    color: #B42332;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.add-experience-btn:hover {
+    background: #FCEBED;
+}
+
+@media (max-width: 560px) {
+    .experience-card-header {
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
