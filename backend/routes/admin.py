@@ -328,3 +328,115 @@ def verify_admin_otp():
 
         if connection:
             connection.close()
+
+# ==================================
+# ADMIN FORGOT PASSWORD - RESET PASSWORD
+# ==================================
+
+@admin_bp.route("/api/admin/reset-password", methods=["POST"])
+def reset_admin_password():
+
+    data = request.get_json()
+
+    if not data:
+        return jsonify({
+            "status": "error",
+            "message": "Invalid request"
+        }), 400
+
+    email = data.get("email", "").strip().lower()
+    new_password = data.get("new_password", "")
+    confirm_password = data.get("confirm_password", "")
+
+    if not email or not new_password or not confirm_password:
+        return jsonify({
+            "status": "error",
+            "message": "All fields are required"
+        }), 400
+
+    if new_password != confirm_password:
+        return jsonify({
+            "status": "error",
+            "message": "Passwords do not match"
+        }), 400
+
+    if len(new_password) < 8:
+        return jsonify({
+            "status": "error",
+            "message": "Password must contain at least 8 characters"
+        }), 400
+
+    connection = None
+    cursor = None
+
+    try:
+        connection = get_db_connection()
+        cursor = connection.cursor()
+
+        cursor.execute(
+            """
+            SELECT r.reset_id, a.admin_id
+            FROM admin_password_resets r
+            JOIN admins a ON r.admin_id = a.admin_id
+            WHERE a.email = %s
+              AND r.verified_at IS NOT NULL
+              AND r.expires_at >= NOW()
+            ORDER BY r.created_at DESC
+            LIMIT 1
+            """,
+            (email,)
+        )
+
+        reset = cursor.fetchone()
+
+        if not reset:
+            return jsonify({
+                "status": "error",
+                "message": "OTP verification required. Please verify OTP again."
+            }), 403
+
+        reset_id, admin_id = reset
+
+        # Hash new password
+        password_hash = generate_password_hash(new_password)
+
+        cursor.execute(
+            """
+            UPDATE admins
+            SET password_hash = %s
+            WHERE admin_id = %s
+            """,
+            (password_hash, admin_id)
+        )
+
+        # Delete used OTP so it cannot be reused
+        cursor.execute(
+            """
+            DELETE FROM admin_password_resets
+            WHERE reset_id = %s
+            """,
+            (reset_id,)
+        )
+
+        connection.commit()
+
+        return jsonify({
+            "status": "success",
+            "message": "Admin password reset successfully. Please login with your new password."
+        }), 200
+
+    except Exception:
+        if connection:
+            connection.rollback()
+
+        return jsonify({
+            "status": "error",
+            "message": "Unable to reset password. Please try again."
+        }), 500
+
+    finally:
+        if cursor:
+            cursor.close()
+
+        if connection:
+            connection.close()
