@@ -87,34 +87,20 @@ document.addEventListener("DOMContentLoaded", function () {
     // 5. DASHBOARD STATISTICS
     // -------------------------------------
 
-    const stats = {
-        alumniConnections: 120,
-        upcomingEvents: 3,
-        jobOpportunities: 8
-    };
+   // -------------------------------------
+// 5. DASHBOARD STATISTICS
+// -------------------------------------
 
-    // Update statistics only if these IDs exist
-    const connectionsCount =
-        document.getElementById("connectionsCount");
+const stats = {
+    upcomingEvents: 3
+};
 
-    const eventsCount =
-        document.getElementById("eventsCount");
+const eventsCount =
+    document.getElementById("eventsCount");
 
-    const jobsCount =
-        document.getElementById("jobsCount");
-
-    if (connectionsCount) {
-        connectionsCount.textContent = stats.alumniConnections;
-    }
-
-    if (eventsCount) {
-        eventsCount.textContent = stats.upcomingEvents;
-    }
-
-    if (jobsCount) {
-        jobsCount.textContent = stats.jobOpportunities;
-    }
-
+if (eventsCount) {
+    eventsCount.textContent = stats.upcomingEvents;
+}
     // -------------------------------------
     // 6. DISPLAY WELCOME MESSAGE
     // -------------------------------------
