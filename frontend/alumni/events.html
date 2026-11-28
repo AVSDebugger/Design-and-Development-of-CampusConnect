@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events & Reunions | CampusConnect</title>
+
+    <link rel="stylesheet" href="../assets/css/alumni.css">
+    <link rel="stylesheet" href="../assets/css/alumni-dashboard.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <span class="brand-logo">CC</span>
+            <span>CampusConnect</span>
+        </div>
+
+        <p class="menu-heading">ALUMNI MENU</p>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="my-profile.html">
+                <span>♙</span> My Profile
+            </a>
+
+           
+
+            <a href="events.html" class="active">
+                <span>▣</span> Events & Reunions
+            </a>
+
+         
+         
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-help">
+                <h4>Stay Connected!</h4>
+                <p>
+                    Stay connected with your college
+                    and participate in college events.
+                </p>
+            </div>
+
+            <a href="login.html" class="logout-link">
+                ↪ Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                <small>ALUMNI COMMUNITY</small>
+                <h3>Events & Reunions</h3>
+            </div>
+
+            <div class="topbar-right">
+
+                <span id="todayDate"></span>
+
+                
+                <div class="user-info">
+                    <div class="user-avatar" id="headerAvatar">A</div>
+                    <span id="headerUserName">Alumni</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- EVENTS CONTENT -->
+        <div class="dashboard-content">
+
+            <div class="page-heading">
+                <h1>Events & Reunions</h1>
+
+                <p>
+                   Discover upcoming college events and
+                    register for activities organized by your college.
+                </p>
+            </div>
+
+
+            <!-- EVENT HIGHLIGHT -->
+            <section class="welcome-banner">
+
+                <div>
+                    <p>CONNECT • CELEBRATE • GROW</p>
+
+                    <h1>Stay Connected With Your College!</h1>
+
+                    <p>
+                        Participate in reunions, workshops and
+                        networking events organized by your institute.
+                    </p>
+                </div>
+
+                <div class="welcome-icon">✦</div>
+
+            </section>
+
+
+            <!-- EVENT STATISTICS -->
+            <section class="stats-container">
+
+                <div class="stat-card">
+                    <div class="stat-icon">▣</div>
+                    <p>Total Events</p>
+                    <h2>12</h2>
+                    <small>Organized by institute</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <p>Upcoming Events</p>
+                    <h2>03</h2>
+                    <small>Scheduled events</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">✓</div>
+                    <p>My Registrations</p>
+                    <h2 id="myEventCount">00</h2>
+                    <small>Your event interests</small>
+                </div>
+
+            </section>
+
+
+            <!-- UPCOMING EVENTS -->
+            <section class="dashboard-card">
+
+                <div class="card-heading">
+                    <div>
+                        <small>DON'T MISS OUT</small>
+                        <h2>Upcoming Events</h2>
+                    </div>
+
+                    <span class="event-status">
+                        Registration Open
+                    </span>
+                </div>
+
+
+                <div class="events-grid">
+
+                    <!-- EVENT 1 -->
+                    <article class="event-card">
+
+                        <div class="event-card-date">
+                            <strong>15</strong>
+                            <span>DEC 2026</span>
+                        </div>
+
+                        <div class="event-card-content">
+
+                            <span class="event-category">
+                                ALUMNI MEET
+                            </span>
+
+                            <h3>Annual Alumni Meet</h3>
+
+                            <p>
+                                Reconnect with your classmates,
+                                faculty members and college community.
+                            </p>
+
+                            <div class="event-details">
+                                <span>📍 College Auditorium</span>
+                                <span>🕙 10:00 AM</span>
+                            </div>
+
+                            <button
+                                class="btn-primary event-register"
+                                data-event="Annual Alumni Meet"
+                                type="button"
+                            >
+                                Register Interest
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- EVENT 2 -->
+                    <article class="event-card">
+
+                        <div class="event-card-date">
+                            <strong>22</strong>
+                            <span>DEC 2026</span>
+                        </div>
+
+                        <div class="event-card-content">
+
+                            <span class="event-category">
+                                CAREER DEVELOPMENT
+                            </span>
+
+                            <h3>Career Guidance Session</h3>
+
+                            <p>
+                                Learn about career opportunities,
+                                interview preparation and industry trends.
+                            </p>
+
+                            <div class="event-details">
+                                <span>🌐 Online Session</span>
+                                <span>🕓 4:00 PM</span>
+                            </div>
+
+                            <button
+                                class="btn-primary event-register"
+                                data-event="Career Guidance Session"
+                                type="button"
+                            >
+                                Register Interest
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- EVENT 3 -->
+                    <article class="event-card">
+
+                        <div class="event-card-date">
+                            <strong>05</strong>
+                            <span>JAN 2027</span>
+                        </div>
+
+                        <div class="event-card-content">
+
+                            <span class="event-category">
+                                WORKSHOP
+                            </span>
+
+                            <h3>Technology & Innovation Talk</h3>
+
+                            <p>
+                                Explore emerging technologies,
+                                innovation and professional development.
+                            </p>
+
+                            <div class="event-details">
+                                <span>📍 Seminar Hall</span>
+                                <span>🕚 11:00 AM</span>
+                            </div>
+
+                            <button
+                                class="btn-primary event-register"
+                                data-event="Technology & Innovation Talk"
+                                type="button"
+                            >
+                                Register Interest
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <p id="eventMessage" class="form-message"></p>
+
+            </section>
+
+
+            <!-- EVENT GUIDELINES -->
+            <section class="dashboard-card">
+
+                <div class="card-heading">
+                    <div>
+                        <small>IMPORTANT INFORMATION</small>
+                        <h2>Event Guidelines</h2>
+                    </div>
+                </div>
+
+                <ul class="event-guidelines">
+                    <li>Register your interest before the event deadline.</li>
+                    <li>Check the event date, time and venue carefully.</li>
+                    <li>Carry your institute or alumni identification if required.</li>
+                    <li>Contact the institute coordinator for event-related queries.</li>
+                </ul>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                © 2026 CampusConnect. All Rights Reserved.
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="../assets/js/alumni-common.js"></script>
+<script src="../assets/js/alumni-events.js"></script>
+
+</body>
+</html>
