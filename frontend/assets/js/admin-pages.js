@@ -190,19 +190,39 @@ if (searchInput || courseFilter || batchFilter || statusFilter) {
 
 const alumniProfiles = {
 
-    1: {
-        name: "Rahul Sharma",
-        email: "rahul@gmail.com",
-        phone: "+91 9876543210",
-        location: "Nashik, Maharashtra",
-        course: "BCA",
-        batch: "2022",
-        college: "CampusConnect College",
-        status: "Pending",
-        designation: "Software Developer",
-        company: "ABC Technologies",
-        experience: "2 Years"
-    },
+   
+1: {
+    name: "Rahul Sharma",
+    email: "rahul@gmail.com",
+    phone: "+91 9876543210",
+    location: "Nashik, Maharashtra",
+    course: "BCA",
+    batch: "2022",
+    college: "CampusConnect College",
+    status: "Pending",
+
+    workExperiences: [
+        {
+            company: "ABC Technologies",
+            designation: "Software Developer",
+            employmentType: "Full-time",
+            startDate: "2022-06",
+            endDate: "",
+            current: true,
+            description: "Working on software development."
+        },
+        {
+            company: "XYZ Solutions",
+            designation: "Junior Developer",
+            employmentType: "Internship",
+            startDate: "2021-01",
+            endDate: "2021-06",
+            current: false,
+            description: "Worked on web development projects."
+        }
+    ]
+},
+
 
     2: {
         name: "Ananya Patil",
@@ -330,9 +350,59 @@ if (document.getElementById("profileName")) {
         const profileId = new URLSearchParams(location.search).get("id");
         setText("detailId", "CC-" + (profileId || ""));
 
-        setText("detailDesignation", alumni.designation);
-        setText("detailCompany", alumni.company);
-        setText("detailExperience", alumni.experience);
+       
+const experienceContainer =
+    document.getElementById("alumniExperiences");
+
+if (experienceContainer) {
+
+    const experiences = alumni.workExperiences || [];
+
+    experienceContainer.innerHTML = "";
+
+    if (experiences.length > 0) {
+
+        experiences.forEach(function (exp, index) {
+
+            const card = document.createElement("div");
+            card.className = "experience-card";
+
+            const heading = document.createElement("h4");
+            heading.textContent = "Experience " + (index + 1);
+
+            const details = [
+                ["Company", exp.company],
+                ["Designation", exp.designation],
+                ["Employment Type", exp.employmentType],
+                ["Start Date", exp.startDate],
+                ["End Date", exp.current ? "Present" : exp.endDate],
+                ["Description", exp.description]
+            ];
+
+            card.appendChild(heading);
+
+            details.forEach(function ([label, value]) {
+
+                if (value) {
+                    const item = document.createElement("p");
+                    item.textContent = label + ": " + value;
+                    card.appendChild(item);
+                }
+
+            });
+
+            experienceContainer.appendChild(card);
+
+        });
+
+    } else {
+
+        experienceContainer.textContent =
+            "No work experience available.";
+
+    }
+}
+
 
         const statusElement = document.getElementById("profileStatus");
 
